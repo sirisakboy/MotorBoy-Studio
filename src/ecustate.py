@@ -13,15 +13,10 @@ def get_ecustate_with_secure():
     Since enums cannot be extended, we create a new enum with all values.
     """
     members = {e.name: e.value for e in BaseECUSTATE}
-    members['SECURE'] = 100  # Add SECURE state
-    
-    class ExtendedECUSTATE(Enum):
-        pass
-    
-    for name, value in members.items():
-        setattr(ExtendedECUSTATE, name, value)
-    
-    return ExtendedECUSTATE
+    members.setdefault('SECURE', 100)  # Add SECURE state
+    # Functional API creates real Enum members (setattr on a plain Enum
+    # subclass only produced bare ints, so `x == ECUSTATE.OFF` never matched).
+    return Enum('ECUSTATE', members)
 
 
 # Get the extended ECUSTATE

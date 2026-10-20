@@ -135,3 +135,10 @@ Required packages (install via pip):
 ## License
 
 See LICENSE file for details.
+## Stabilize pass (2026-10-21)
+- flash.py: added missing `HondaECUAppPanel` / `dispatcher` imports (panel crashed on load/write); dropped unused imports
+- Replaced `from eculib.honda import *` with explicit imports in frames/* and threads/kline.py
+- ecustate.py: `ExtendedECUSTATE` used setattr on a plain Enum (members were bare ints, comparisons never matched) -> now built with Enum functional API
+- checksum.py: `checksum8bitHonda` was a plain sum; now two's complement, identical to eculib
+- Untracked committed `__pycache__`, extended `.gitignore`
+- Added `tests/` (checksum, ECUSTATE) and GitHub Actions CI

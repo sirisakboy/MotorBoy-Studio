@@ -1,5 +1,7 @@
 import wx
-from eculib.honda import *
+from pydispatch import dispatcher
+from eculib.honda import DTC
+from ecustate import ECUSTATE
 from wx.lib.mixins.listctrl import ListCtrlAutoWidthMixin
 
 from .base import HondaECUAppPanel

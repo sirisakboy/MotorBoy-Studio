@@ -1,5 +1,8 @@
+import struct
+
 import wx
-from eculib.honda import *
+from pydispatch import dispatcher
+from ecustate import ECUSTATE
 
 from .base import HondaECUAppPanel
 

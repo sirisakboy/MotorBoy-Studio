@@ -1,17 +1,14 @@
 import json
 import os
-import struct
 import tarfile
 import time
-from threading import Thread
 
-import numpy as np
-from pyftdi.ftdi import FtdiError
-from usb.core import USBError
 import wx
-from eculib import KlineAdapter
-from eculib.honda import do_validation, checksum8bitHonda
+from pydispatch import dispatcher
+from eculib.honda import do_validation
 from ecustate import ECUSTATE
+
+from .base import HondaECUAppPanel
 
 
 class HondaECUFlashPanel(HondaECUAppPanel):

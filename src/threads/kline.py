@@ -9,7 +9,10 @@ from pyftdi.ftdi import FtdiError
 from usb.core import USBError
 import wx
 from eculib import KlineAdapter
-from eculib.honda import *
+from pydispatch import dispatcher
+from eculib.honda import (HondaECU, checksum8bit, checksum8bitHonda,
+                          do_validation)
+from ecustate import ECUSTATE
 
 
 class KlineWorker(Thread):
