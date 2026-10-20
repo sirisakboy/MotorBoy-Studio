@@ -1,0 +1,9 @@
+# Filtered KDS/SDS PID and service-code workbook — provenance note
+
+- **Upstream:** `https://github.com/HerrRiebmann/KDS2Bluetooth`, pinned repository snapshot `bb8be32a6ed54d995c838bb58af528731fc8fae1`.
+- **License:** repository-level GPL-3.0; the upstream `LICENSE` is retained beside the filtered data.
+- **Source artifact reviewed:** `Documentation/OBD II PIDs.xlsx`, source workbook SHA-256 `5fd3d3b37a0103f234ed82b597ba328820bb67fcebca39c5226192fa90a12d0d`. The original workbook is deliberately **not** included.
+- **Included derivative:** `KDS_SDS_Z750_Z1000_PIDs_filtered.xlsx`, SHA-256 `41a39556d0822c4768b24c42d3a1e21cde6f71e3ae40a11077a4b27b5efbe729` (22,458 bytes). It contains exactly four sheets: `KDS PID` (164 rows), `Supported PIDs Z1000` (165), `Supported PIDs Z750` (195), and `Service Codes` (28). Upstream cached formula results were copied as literal values for portability; no formulas remain. Those values were not re-derived or vehicle-verified.
+- **Deliberate filtering:** the upstream `AT-Commands`, `SID`, `Raterei`, `Test`, generic OBD and other sheets were excluded. In particular, no reset, clear-DTC, Bluetooth configuration, EEPROM write, or security command tables are included. The full KDS2Bluetooth repository, binaries, standards PDFs, code and test artifacts were not copied. `tools/filter_kds_workbook.py` documents/repeats the four-sheet conversion from a separately obtained source workbook.
+- **Interpretation/limits:** workbook labels indicate Kawasaki Z750/Z1000 and KDS/SDS context, but data may be incomplete, inferred, or hardware-specific. It is an offline diagnostic reference, not an ECU map/XDF, not a verified OEM service database, and not evidence that every listed request is safe to transmit. Do not infer ABS/TCU/cluster/immobilizer definitions from it.
+- **Scope:** no stock BIN/ROM, key material, seed-key, bypass, checksum algorithm, or write-enabled ECU profile is present.

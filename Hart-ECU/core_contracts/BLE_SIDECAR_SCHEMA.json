@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ecu-tuner:ble-sidecar-schema:v1",
+  "title": "ECU Tuner local BLE discovery sidecar JSON-RPC messages",
+  "description": "Draft v1 request/response schemas for the local stdin/stdout BLE discovery process.",
+  "oneOf": [
+    { "$ref": "#/$defs/adaptersListRequest" },
+    { "$ref": "#/$defs/scanRequest" },
+    { "$ref": "#/$defs/successResponse" },
+    { "$ref": "#/$defs/errorResponse" }
+  ],
+  "$defs": {
+    "requestBase": {
+      "type": "object",
+      "required": ["jsonrpc", "id", "method"],
+      "properties": {
+        "jsonrpc": { "const": "2.0" },
+        "id": { "oneOf": [{ "type": "string" }, { "type": "number" }, { "type": "null" }] },
+        "method": { "type": "string" },
+        "params": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "adaptersListRequest": {
+      "allOf": [
+        { "$ref": "#/$defs/requestBase" },
+        { "properties": { "method": { "const": "ble.adapters.list" }, "params": { "type": "object", "maxProperties": 0 } } }
+      ]
+    },
+    "scanRequest": {
+      "allOf": [
+        { "$ref": "#/$defs/requestBase" },
+        {
+          "properties": {
+            "method": { "const": "ble.scan" },
+            "params": {
+              "type": "object",
+              "properties": { "seconds": { "type": "integer", "minimum": 1, "maximum": 30 } },
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    "successResponse": {
+      "type": "object",
+      "required": ["jsonrpc", "id", "result"],
+      "properties": {
+        "jsonrpc": { "const": "2.0" },
+        "id": { "oneOf": [{ "type": "string" }, { "type": "number" }, { "type": "null" }] },
+        "result": {}
+      },
+      "additionalProperties": false
+    },
+    "errorResponse": {
+      "type": "object",
+      "required": ["jsonrpc", "id", "error"],
+      "properties": {
+        "jsonrpc": { "const": "2.0" },
+        "id": { "oneOf": [{ "type": "string" }, { "type": "number" }, { "type": "null" }] },
+        "error": {
+          "type": "object",
+          "required": ["code", "message"],
+          "properties": { "code": { "type": "integer" }, "message": { "type": "string" } },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

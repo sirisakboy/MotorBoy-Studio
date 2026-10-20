@@ -1,0 +1,12 @@
+module,make,model_year,ecu_or_profile_id,format,license,status,checksum_status,vehicle_tested,notes
+engine_ecu,Honda,2012,CBR1000RR US,XDF,GPL-3.0,candidate_xml_validated_filtered,external_plugin_unverified,no,39 tables; filtered derivative removed five XDFPATCH disable blocks and one Disable Immobilizer XDFFLAG; binary region 0x40000; external checksum plugin at 0x3FFF8 unverified; no BIN included
+engine_ecu,Honda,2019,CRF110F / 38770-KYK-D12,XDF,GPL-3.0,candidate_metadata_mismatch,no_xdf_checksum,no,"11 tables; upstream README states 64 kb, start offset 8000, checksum address 0; XDF declares REGION size 0x65536 and BASEOFFSET 0; metadata/offset unresolved; no BIN included"
+engine_ecu,Suzuki,2022+,GSX-R1300 Hayabusa Gen 3; XDF filename 32910-10LX0,XDF,MIT,excluded_password_and_patch_scope,no_xdf_checksum,no,"Not redistributed: upstream XDF has modifypassword/openpassword fields and 10 XDFPATCH blocks, including disable controls; fields were not stripped or bypassed. ECU ID mismatch also unresolved; no XDF/BIN included."
+engine_ecu_diagnostics,Honda,unknown,CRF250L K-Line community sample,text request/response,MIT,reference_only_unverified,no_checksum_metadata,no,Several values unknown; exact year/ECU/software unresolved; offline only; not an XDF or verified protocol profile
+engine_ecu_diagnostics,Kawasaki/Suzuki,unknown,Z750/Z1000 KDS/SDS workbook (filtered),XLSX reference,GPL-3.0,filtered_reference_unverified,no_checksum_metadata,no,"Four sheets only (KDS PID, Supported PIDs Z1000/Z750, Service Codes); source values unverified; reset/clear/configuration sheets excluded"
+abs,all,,,,,no_verified_definition,no_profile,no,No model-specific license-clear ABS definition selected in this research pass
+traction_control,all,,,,,no_verified_definition,no_profile,no,No separate module definition selected; some engine ECU profiles may include ride-mode/throttle tables
+immobilizer,all,,,,,excluded_security_scope,not_applicable,no,"Diagnostics/identification only; no keys, secrets, bypass data, or immobilizer maps"
+instrument_cluster,all,,,,,no_verified_definition,no_profile,no,No model-specific license-clear definition selected
+tcu_transmission,all,,,,,no_verified_definition,no_profile,no,No model-specific license-clear definition selected
+bms_motor_controller,all,,,,,no_verified_definition,no_profile,no,Some narrow internal bus projects were found but lack a clear license or are hardware/model-specific

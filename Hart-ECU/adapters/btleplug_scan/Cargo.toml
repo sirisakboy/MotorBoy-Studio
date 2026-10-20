@@ -1,0 +1,9 @@
+[package]
+name = "ecu-tuner-ble-scan-sidecar"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+btleplug = { path = "../../dependencies/btleplug-0.13.5" }
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }

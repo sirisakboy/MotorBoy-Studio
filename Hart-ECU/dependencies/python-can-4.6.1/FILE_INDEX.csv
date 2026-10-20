@@ -1,0 +1,98 @@
+path,bytes,sha256,reviewed_role
+CHANGELOG.md,41848,cd99a28884b4d7014f8378c65627458bcc5252496863e07b4044a5a8e37d8660,license/build/project metadata or documentation
+LICENSE.txt,7651,da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768,license/build/project metadata or documentation
+README.rst,5045,19e10b9d20fa8ea065df91dbbeec5bf496442f143161c09d0794300acfdfd3a6,license/build/project metadata or documentation
+can/__init__.py,2951,7699d13b6dbdd0e0699ea243af837ede8a53c48fed895e6a931eeb8fd8591990,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/_entry_points.py,906,ecf1a8778762519dc8494d9850a0674a9470cc0d9c7c6cd3c18d7550398076b8,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/bit_timing.py,42444,5fa1a65b1e84da6e82e6632e1cc7b170d2fc2615cc44a4fa99baf7c7fa8445cf,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/bridge.py,1934,14a469935df2d5176895b2cd2da118ebd2abf7c8aa61b89c973973b04c2864e2,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/broadcastmanager.py,13276,9219a537e7e586fc413a39834cee3688cbe7e9cff812a5f5dd0b9997fd2f9597,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/bus.py,19448,7dfa1be3f20c7f3b6c9f0763ccbf07b0c635d8fa340b061fd6b3f35134f8d74a,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/cli.py,11385,a917a73b1b9884b304bff81e353bd5a54a2255a332f9465678a785216edd2938,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/ctypesutil.py,2456,6d28e04db20a7fc3a88dcad9fbdae4b072555525f5688d2138cb43c5ef3aecaf,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/exceptions.py,4004,95db1bd0a9572e05fb143e36667171c4a995223acf2383ea2325de3a0fab3987,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/interface.py,8342,3acf5caa927c13a8a8c54d1add20e727b1b02fb9647ff539894812299679587c,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/interfaces/__init__.py,2158,8f2c2a2c2b8519332bfbacf4acc06300aab567d5e8bd8304caf43b081c0ec23d,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/canalystii.py,8072,449f0601a88f540595e96dd6bc7671971d7003164283a36b8d2ac6ace5c61945,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/cantact.py,6407,53a8d1416ef26b403ad59141aa06a871370793a8f51ec12a1c6f67082c3e4f6c,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/etas/__init__.py,12074,4bf042f3238832a0960c3ab91a68dc139d65548db5179bcf2d715c09c7b4e393,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/etas/boa.py,20644,7743faeb0afebc2e47c53838fe51857686ac21fc94768e86ae754bec73c9c4eb,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/gs_usb.py,6105,ab65a095d3d7b3f1de0fa897d0fca5382fadcf6ce4c529b40b82f26f7f26e8bf,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ics_neovi/__init__.py,219,878b568fbc2e04cf20c1765f26403a152e4ca1962acd36a7a3b0634c37c1ade9,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ics_neovi/neovi_bus.py,17873,6ca21bf0786f8a38c2680afcce358eba7e982dac312437bae0747ee3eff99f9b,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/iscan.py,6341,e771363bcbdc64a0ad38664c16358c48609381ccd27cda28b7c65b777e4306cd,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/__init__.py,508,c51ca64a1c62723fbed82cee00591329410764a45f5f5285b278961805a5fd24,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/canlib.py,5833,a993a5ca793e6aab8e6d7e8c5b4d0de23c25b19a40952e2fdf88d00b2287b119,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/canlib_vcinpl.py,38808,0678b6b72fc20e69dde25d34ca88d39c2bd351996378924859dd726166f88df9,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/canlib_vcinpl2.py,40297,12abc58389930c2a7209caad7eb1f8468dc8a6cc6880570163535b079c2b64d0,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/constants.py,9102,37e62baa12a67b3c019f280123805093ef7f050cb22d5a3708583f49998a21d8,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/exceptions.py,978,bf194c458010715d8041cae37270870c8777e008e2a890fbbd7d923a2bcc37e8,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/ixxat/structures.py,10558,6075f5b78f50ef1c7d2ef7349f620405f5670bd62817c553c837dc99788a5c47,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/kvaser/__init__.py,218,92176938205f53c017841053452a3232c10c9ef166578de396de95509f38cad4,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/kvaser/canlib.py,28649,83163f0cf6ee4cdf90e31529f0a209444a2ab62bbe4713634b0f58ca07523e53,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/kvaser/constants.py,7028,126861fdc2140decbe37e39c90a3a48ba0cb2bf7499e1ccbf6963d7e2f296a68,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/kvaser/structures.py,1971,d2b743040a4d0e5ff0a46f0c0c9d315b75d4e1b1a7f974681eec8e2ff55862ad,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/neousys/__init__.py,132,84b0392e43229c9e793dcc6d3882e92b1359ef082ed9d862c8eda7ddf55f2c88,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/neousys/neousys.py,7691,e938c76570dcca3884cf7c70635abe277584d03ae30489fafb67b19a7cbb7095,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/nican.py,11539,6e171221897f55bb8c01a0f9f2c266b98037d3a671abd15482390de9c597385a,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/nixnet.py,13166,f22ecab626437d22b0c8e7ac4757dc555fdde990d43c404af588feb8daf8982a,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/pcan/__init__.py,137,743082544f0a7d94db4e61b165738856b225ed3faba2c3d028b1a81f38469116,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/pcan/basic.py,41286,22ffe93739075b0f50abc259f79235a39767ae4b5a3dbb6bad0390ac92f9dec4,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/pcan/pcan.py,28471,4e5053e0a4c60ccd92a1719562c4db60a008bad9aad5d34e64737fea20e02918,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/robotell.py,15756,3a52eabe7b96283bbb7274423f49f7e969d00264cb27367dede1e105d2330ffd,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/seeedstudio/__init__.py,110,984a9a49ca139162cc387fdf88e1c6a42465c46b4cfeb86b1c5bce494e3d66e5,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/seeedstudio/seeedstudio.py,9610,3e5f0b1de821cfe264f2e91d4b50a4ad2099296d2c2fd52629814c942fa180a7,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/serial/__init__.py,114,3b3dfdb6a8824a3e42dbaef435a2c7338f1300d2e011f6f3530bf6c16c1306ea,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/serial/serial_can.py,7719,aa672086c4a7ba54f7dc3f3b07a65081877fd6c605c252851fc325ce21f457b8,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/slcan.py,15146,6393922ba9702378d627b43d4333b9b7d746bdace307e85b343eb3ea39ecbe3a,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/socketcan/__init__.py,286,555dfed45961791f8a9b6ec1dabee74ed9442258b4eda606375f3c6dcad47cad,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/socketcan/constants.py,1530,71dea917147f8ab2d0ad51c37fa42175de3a836be8cfb71ff6d9a0a9ff96aa47,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/socketcan/socketcan.py,36025,85109b3dfda67349d452dfd9f33164d99540b910f1b030f9cbcc634d7f8ee92e,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/socketcan/utils.py,2747,9695cf8b36ff173de7b73a2796bb3184cfdaec18db6668ec8771b5dac6f6a436,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/socketcand/__init__.py,275,e2b51d9d994f99299d7c8a45f2bbcbc631d9e70fb17cb4e21cbe57302ca0e1cd,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/socketcand/socketcand.py,13741,9d8cf3cca0e9198046dbd1feae67547e8730576d6c461296187ebb5ad9dffe0b,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/systec/__init__.py,160,a268be4a0a8110038a9ded52ae634b8f5a7504c3c10876c93a143d40e2a5826b,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/systec/constants.py,22700,d40ba982ca330a3a0df04372c780762cd358b408fd60f114799812f6b2660618,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/systec/exceptions.py,4815,e059ba820f056753322d025acb4c61cf73c782eda06c91f755c869959e2fc9e8,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/systec/structures.py,13156,7262672178375a05b523220006f1261134a96187f9c0dbeac4329719a6f6b2f8,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/systec/ucan.py,46738,7857e122d6569186f466723f75034904330b8e8ad5fdcdc6642820ccfd179a8f,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/systec/ucanbus.py,11354,cac403cb089532481485518014f0330b36f95737a4a175ad6c927ddf0872afbc,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/udp_multicast/__init__.py,157,6862c50de07632bd2a8c51c6a6fbd68a877e830afcafa1d681ce87409737dba6,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/udp_multicast/bus.py,18307,fc6022f6c00801e7a6018be46de6c8cd54a0f3da881e56b1d7295950f7222b52,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/udp_multicast/utils.py,2603,fa421a6ef2da0df21965caba432ee6b0dd8b5329f6401a5b5ae409b656667d4a,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/usb2can/__init__.py,253,d95fe365ae588aadd662bf482c49c1d3ebd60553a5624ad8b91556aa29a4b517,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/usb2can/serial_selector.py,1695,512a903b5a3edc928a20a7a60eb9f6e9dc14fe4b9eb2a9ae68dbb96399ec1844,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/usb2can/usb2canInterface.py,6648,50506db6adb279f08c840f39d0341a550cac0c228f441e80022db886be80db00,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/usb2can/usb2canabstractionlayer.py,6100,b71d719d1bc5209d80d0ffc6bd12df6b159a9a400f1c4f376ac9b9287831eb14,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/vector/__init__.py,564,cef312565652ba3aa640afee185222bd730309017dd1c7d859c338466a6ae1cb,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/vector/canlib.py,49596,4ef1bd06b16fcc88252ac09399c2a8c2a68b53e8d3c9611df0f40b9226350a5c,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/vector/exceptions.py,1045,0eccea6da0693982522476d6695f49eafa00c13afdfd936bf307f0e07c7388f2,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/vector/xlclass.py,8461,bcfa29b6523b73c7c05e6b053726bb3281fb134dce03c64ada408b58484ec599,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/vector/xldefine.py,9572,5e0020510db4bf19f46e023d1662e906d268710481d0610df7dcdb95cfe3f8af,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/vector/xldriver.py,9893,761c25756d50b70a4ef6693f3a03c26c4c8f47debdc29ed1eb0b17b861313ae4,hardware/interface backend (optional vendor OS driver may be required)
+can/interfaces/virtual.py,7074,3eca89ddcaec0f0bfbda17403d1e5b94d830527ef1e0342bd064b16803c03637,hardware/interface backend (optional vendor OS driver may be required)
+can/io/__init__.py,1243,79d7e3d98f6ae15ce60f1546a47923227fecfbcc373d161e50805bc1947c3555,CAN log/file format I/O
+can/io/asc.py,17460,f5cd733dd2fe1a21cb5fd192578bf78ca34d89331f3fb50c1f35200254644998,CAN log/file format I/O
+can/io/blf.py,23157,ded285364514bf80b9d5038c21cfa377d84816ccec0c437d7ff1810d163e2f22,CAN log/file format I/O
+can/io/canutils.py,6348,cf8b036f6a578c90dc901dece803a763bf58612a77a524a7400e9b7074fa23cf,CAN log/file format I/O
+can/io/csv.py,4355,23a2a3c2014153ee1d6f9640b7ae8784f1eadae15fe8ff3ed1c29244a1b203aa,CAN log/file format I/O
+can/io/generic.py,8075,7b7fe6a5bf18adbc1485b35ba2f999cffd4c12cad276ef4ccea6ed0475e19abe,CAN log/file format I/O
+can/io/logger.py,13774,9bfcdfa8905e546c8b3fe10476ad338359ca30f2f428e98ec77fcd32824a9dde,CAN log/file format I/O
+can/io/mf4.py,21201,b13913d04349763207ce963749e089ab06e13d6c27127aa74a5c9ecf9be48045,CAN log/file format I/O
+can/io/player.py,6117,5fd359a38653665a82f9a1278a2c7a6a741d70b771f691706ad3a314d89276da,CAN log/file format I/O
+can/io/printer.py,1765,cba8672bb8d1a72b2d8b36d0cb858b37bd5093d238f631032fe0f598aadf9ef7,CAN log/file format I/O
+can/io/sqlite.py,9356,05e50083248ca3896852d23a96d03ff11827d14fe0210db74e6d79a65132e9f3,CAN log/file format I/O
+can/io/trc.py,16668,d98e1751a53fcbd508a00b1f119f625938aa97ca0b8e1b69c43868e755415bde,CAN log/file format I/O
+can/listener.py,5622,7ab75cf0c9c1ce78f53ffb815ae86f9a34788b458781c8a18395e39f00109b83,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/logconvert.py,1688,e4b496c9bae9a01ed917bf1a7e0d348f793d65d1324bc23d20dfe42c9f0f9983,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/logger.py,3908,ee9b3787e019e86966f22d20707133392ad872cd3d09f7a474d92704a11c53fa,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/message.py,12086,2b825c4dc510f50e6735ff93e2e9131a250e8919ea061a498eb3a8b632abdc5f,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/notifier.py,11783,47d1139cadc1e761845d802d3d7aa411ebae71c85e956280b731e0dd07f43df7,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/player.py,3359,457a0ad5a3e23748756097cfaf96c88f293e4fb639f490682e5ce8fcc16a75ec,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/py.typed,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/thread_safe_bus.py,3781,b25155c964b20f126188505e0edd0f03a6955cba39722c1ab538c6eb7e9246ae,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/typechecking.py,1941,54adc7533b4f3f13c377e39ed19cc554924be2e3c7bf4794dda63b71a92c26a1,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/util.py,16648,ce05180780052611a055bc280bbce7c4f86dc38dc73895f9212a511f84b260f6,"shared CAN bus/message/API, utilities, CLI, or core support"
+can/viewer.py,22060,4155504ac656adb6e0758ad427787b28e34ab4bc07bae52045d9cae6422f31c9,"shared CAN bus/message/API, utilities, CLI, or core support"
+pyproject.toml,6999,41c5b7c73841425964cb83eab4ad7b2c123855e01414f2000d2f6725b777f0cf,license/build/project metadata or documentation
+setup.cfg,38,1c473cbaee8da5fc46e7f0158794af5cea4414c34a3cf3f180c2001f5e38bd3e,license/build/project metadata or documentation

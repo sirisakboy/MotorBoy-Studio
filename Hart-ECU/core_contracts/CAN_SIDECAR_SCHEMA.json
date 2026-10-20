@@ -1,0 +1,353 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ecu-tuner:can-sidecar-schema:v1",
+  "title": "ECU Tuner local CAN sidecar JSON-RPC messages",
+  "description": "Draft v1. Request schemas for the stdin/stdout JSON-lines CAN frame transport sidecar.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/systemInfoRequest"
+    },
+    {
+      "$ref": "#/$defs/interfacesListRequest"
+    },
+    {
+      "$ref": "#/$defs/openRequest"
+    },
+    {
+      "$ref": "#/$defs/receiveRequest"
+    },
+    {
+      "$ref": "#/$defs/sendRequest"
+    },
+    {
+      "$ref": "#/$defs/closeRequest"
+    },
+    {
+      "$ref": "#/$defs/successResponse"
+    },
+    {
+      "$ref": "#/$defs/errorResponse"
+    }
+  ],
+  "$defs": {
+    "requestBase": {
+      "type": "object",
+      "required": [
+        "jsonrpc",
+        "id",
+        "method"
+      ],
+      "properties": {
+        "jsonrpc": {
+          "const": "2.0"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "method": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "systemInfoRequest": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/requestBase"
+        },
+        {
+          "properties": {
+            "method": {
+              "const": "system.info"
+            },
+            "params": {
+              "type": "object",
+              "maxProperties": 0
+            }
+          }
+        }
+      ]
+    },
+    "interfacesListRequest": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/requestBase"
+        },
+        {
+          "properties": {
+            "method": {
+              "const": "can.interfaces.list"
+            },
+            "params": {
+              "type": "object",
+              "maxProperties": 0
+            }
+          }
+        }
+      ]
+    },
+    "openRequest": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/requestBase"
+        },
+        {
+          "properties": {
+            "method": {
+              "const": "can.open"
+            },
+            "params": {
+              "type": "object",
+              "required": [
+                "interface"
+              ],
+              "properties": {
+                "interface": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "channel": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "bitrate": {
+                  "type": "integer",
+                  "minimum": 10000,
+                  "maximum": 5000000
+                },
+                "fd": {
+                  "type": "boolean"
+                },
+                "data_bitrate": {
+                  "type": "integer",
+                  "minimum": 100000,
+                  "maximum": 10000000
+                },
+                "receive_own_messages": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "required": [
+                      "data_bitrate"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "fd"
+                    ],
+                    "properties": {
+                      "fd": {
+                        "const": true
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "receiveRequest": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/requestBase"
+        },
+        {
+          "properties": {
+            "method": {
+              "const": "can.receive"
+            },
+            "params": {
+              "type": "object",
+              "properties": {
+                "timeout": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 5
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    "sendRequest": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/requestBase"
+        },
+        {
+          "properties": {
+            "method": {
+              "const": "can.send"
+            },
+            "params": {
+              "type": "object",
+              "required": [
+                "arbitration_id"
+              ],
+              "properties": {
+                "arbitration_id": {
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 536870911
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^(0[xX])?(?:[0-9a-fA-F]{1,7}|[01][0-9a-fA-F]{7})$"
+                    }
+                  ]
+                },
+                "data": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^(?:[0-9a-fA-F]{2})*$"
+                    },
+                    {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 255
+                      }
+                    }
+                  ]
+                },
+                "is_extended_id": {
+                  "type": "boolean"
+                },
+                "is_fd": {
+                  "type": "boolean"
+                },
+                "timeout": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 5
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    "closeRequest": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/requestBase"
+        },
+        {
+          "properties": {
+            "method": {
+              "const": "can.close"
+            },
+            "params": {
+              "type": "object",
+              "maxProperties": 0
+            }
+          }
+        }
+      ]
+    },
+    "successResponse": {
+      "type": "object",
+      "required": [
+        "jsonrpc",
+        "id",
+        "result"
+      ],
+      "properties": {
+        "jsonrpc": {
+          "const": "2.0"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result": {}
+      },
+      "additionalProperties": false
+    },
+    "errorResponse": {
+      "type": "object",
+      "required": [
+        "jsonrpc",
+        "id",
+        "error"
+      ],
+      "properties": {
+        "jsonrpc": {
+          "const": "2.0"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "integer"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
