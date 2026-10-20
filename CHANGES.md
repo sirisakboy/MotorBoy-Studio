@@ -142,3 +142,11 @@ See LICENSE file for details.
 - checksum.py: `checksum8bitHonda` was a plain sum; now two's complement, identical to eculib
 - Untracked committed `__pycache__`, extended `.gitignore`
 - Added `tests/` (checksum, ECUSTATE) and GitHub Actions CI
+
+## xdfengine (2026-10-21)
+- New `src/xdfengine/`: clean-room TunerPro XDF 1.60 parser + BIN reader/writer, no wx/hardware dependency
+- Safe equation evaluator (AST, no eval) with inverse for writes; 8/16/32-bit, signed, LSB/MSB, float
+- `read_table`, `write_cell`, `validate`, `diff_roms`, Honda 8-bit checksum check/fix (never automatic)
+- CLI: `python -m xdfengine list|validate|dump|set|checksum|diff`; tables selectable by uniqueid (titles can repeat)
+- Verified: both bundled XDFs parse and decode inside bounds; 18 tests
+- Not verified: real stock ROMs, checksum plugin parity (`calculationmethod 0` assumed Honda 8-bit), stride semantics for exotic layouts
