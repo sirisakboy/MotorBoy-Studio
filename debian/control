@@ -1,0 +1,13 @@
+Section: electronics
+Priority: optional
+Maintainer: HondaECU Team <info@mcuinnovations.com>
+Build-Depends: debhelper (>= 12~), dh-python, python3-all, python3-setuptools, python3-wxgtk4.0, libwxgtk3.2-0
+Standards-Version: 4.6.0
+Homepage: https://github.com/RyanHope/HondaECU
+
+Package: hondaecu
+Architecture: any
+Depends: ${python3:Depends}, ${shlibs:Depends}, ${misc:Depends}, python3-eculib, python3-pyusb, python3-pydispatcher, python3-numpy, python3-requests, python3-lxml, python3-pyparsing
+Description: Honda ECU Diagnostic Tool
+ A diagnostic and flashing tool for Honda motorcycles ECUs.
+ Supports reading, writing, and tuning Honda motorcycle ECU firmware.

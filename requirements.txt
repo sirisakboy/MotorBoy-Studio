@@ -1,0 +1,15 @@
+# HondaECU Dependencies
+# Install eculib locally first from the provided tar.gz
+# pip install /path/to/eculib.tar.gz
+
+# pywin32; sys_platform == 'win32'  # Uncomment on Windows
+pyusb
+pydispatcher
+wxPython
+requests
+lxml
+numpy>=1.24,<2.0
+colour
+pyparsing
+gitpython
+appdirs

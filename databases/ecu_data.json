@@ -1,0 +1,492 @@
+{
+  "honda": {
+    "ecu_models": [
+      {
+        "model": "VFR 1200 X DCT",
+        "year": "2014-2015",
+        "pn": "38770-MGE-D02",
+        "ecm_id": "\\x01\\x00\\xaa\\x01\\x02"
+      },
+      {
+        "model": "VFR 1200 DCT",
+        "year": "2014-2016",
+        "pn": "38770-MGE-F02"
+      },
+      {
+        "model": "VFR 1200 X",
+        "year": "2010-2015",
+        "pn": "38770-MGE-D02"
+      },
+      {
+        "model": "VFR 1200",
+        "year": "2010",
+        "pn": "38770-MGE-F02"
+      },
+      {
+        "model": "VFR 1200 DCT",
+        "year": "2014-2016",
+        "pn": "38770-MGE-D41"
+      },
+      {
+        "model": "VFR 1200 DCT",
+        "year": "2014-2016",
+        "pn": "38770-MGE-F11"
+      },
+      {
+        "model": "VFR 1200 DCT",
+        "year": "2014-2016",
+        "pn": "38770-MGE-D41"
+      },
+      {
+        "model": "NC750X",
+        "year": "2015",
+        "pn": "30400-K59J-A71"
+      },
+      {
+        "model": "NC750S",
+        "year": "2016",
+        "pn": "30400-K59A-A11"
+      },
+      {
+        "model": "NC750",
+        "year": "2014-2016",
+        "pn": "30400-K59F-A01"
+      },
+      {
+        "model": "NC750ID",
+        "year": "2014-2016",
+        "pn": "30400-K59-M01"
+      },
+      {
+        "model": "CB650F",
+        "year": "2014-2016",
+        "pn": "30400-K60R-B61"
+      },
+      {
+        "model": "CB650F",
+        "year": "2014-2016",
+        "pn": "30400-K60R-B71"
+      },
+      {
+        "model": "CB650F",
+        "year": "2014-2016",
+        "pn": "30400-K60K-B31"
+      },
+      {
+        "model": "CB500F",
+        "year": "2014-2016",
+        "pn": "30400-K46-N31"
+      },
+      {
+        "model": "CB500F",
+        "year": "2014-2016",
+        "pn": "30400-K46-N21"
+      },
+      {
+        "model": "CBR1000RR",
+        "year": "2011-2015",
+        "pn": "38770-MFR-642"
+      },
+      {
+        "model": "CBR1000RR",
+        "year": "2014-2015",
+        "pn": "38770-MGH-N12"
+      },
+      {
+        "model": "CBR1000RR",
+        "year": "2014-2015",
+        "pn": "38770-MGH-D21"
+      },
+      {
+        "model": "CBR1000RR",
+        "year": "2014-2015",
+        "pn": "38770-MGH-M12"
+      },
+      {
+        "model": "CBR1000RR",
+        "year": "2014-2015",
+        "pn": "38770-MGH-F21"
+      },
+      {
+        "model": "CBR1000RR",
+        "year": "2014-2015",
+        "pn": "38770-MGH-641"
+      },
+      {
+        "model": "VFR800F",
+        "year": "2010-2013",
+        "pn": "38770-MGE-D01"
+      },
+      {
+        "model": "VFR800F",
+        "year": "2010-2013",
+        "pn": "38770-MGE-F01"
+      },
+      {
+        "model": "VFR800F",
+        "year": "2010-2013",
+        "pn": "38770-MGE-623"
+      },
+      {
+        "model": "VFR800F",
+        "year": "2010-2013",
+        "pn": "38770-MGE-D01"
+      },
+      {
+        "model": "VFR800F",
+        "year": "2010-2013",
+        "pn": "38770-MGE-F11"
+      },
+      {
+        "model": "VFR800F",
+        "year": "2010-2013",
+        "pn": "38770-MGE-D41"
+      },
+      {
+        "model": "CB1000R",
+        "year": "2008-2016",
+        "pn": "38770-MGE-F02"
+      },
+      {
+        "model": "CB1000R",
+        "year": "2008-2016",
+        "pn": "38770-MGE-D02"
+      },
+      {
+        "model": "CB1000R",
+        "year": "2008-2016",
+        "pn": "38770-MGE-F02"
+      },
+      {
+        "model": "VFR1200 DCT",
+        "year": "2010-2015",
+        "pn": "38770-MGE-D02"
+      },
+      {
+        "model": "CBR125R",
+        "year": "2012-2015",
+        "pn": "30400-K59-M01"
+      },
+      {
+        "model": "CBR125R",
+        "year": "2012-2015",
+        "pn": "30400-K60R-B61"
+      },
+      {
+        "model": "CBR125R",
+        "year": "2012-2015",
+        "pn": "30400-K60R-B71"
+      },
+      {
+        "model": "CBR125R",
+        "year": "2012-2015",
+        "pn": "30400-K60K-B31"
+      },
+      {
+        "model": "CB125F",
+        "year": "2015",
+        "pn": "30400-K46-N31"
+      },
+      {
+        "model": "CB125F",
+        "year": "2015",
+        "pn": "30400-K46-N21"
+      },
+      {
+        "model": "Z 125",
+        "year": "2018-2019",
+        "pn": "38770-K0F-A01",
+        "ecm_id": "\\x01\\x02\\xca\\x05\\x01"
+      },
+      {
+        "model": "Z 125",
+        "year": "2018-2019",
+        "pn": "38770-K0F-T01",
+        "ecm_id": "\\x01\\x02\\xca\\x05\\x01"
+      },
+      {
+        "model": "MSX 125 (Grom)",
+        "year": "2015-2019",
+        "pn": "38770-K26-901"
+      },
+      {
+        "model": "MSX 125 (Grom)",
+        "year": "2016-2019",
+        "pn": "38770-K26-B02"
+      },
+      {
+        "model": "MSX 125 (Grom)",
+        "year": "2016-2019",
+        "pn": "38770-K26-B13"
+      },
+      {
+        "model": "MSX 125 (Grom)",
+        "year": "2016-2019",
+        "pn": "38770-K26-C31"
+      },
+      {
+        "model": "Scoopy i",
+        "year": "2019",
+        "pn": "38770-K16-901"
+      },
+      {
+        "model": "Scoopy i",
+        "year": "2019",
+        "pn": "38770-K16-B61"
+      },
+      {
+        "model": "Spacy i",
+        "year": "2019",
+        "pn": "38770-KZL-C03"
+      },
+      {
+        "model": "Zoomer X",
+        "year": "2019",
+        "pn": "38770-K20-T01"
+      },
+      {
+        "model": "Wave 110i",
+        "year": "2019",
+        "pn": "38770-K73-T32"
+      },
+      {
+        "model": "Wave 125i",
+        "year": "2019",
+        "pn": "38770-K73-M62"
+      },
+      {
+        "model": "CBR150R",
+        "year": "2019",
+        "pn": "38770-K45-TA1"
+      }
+    ],
+    "dtc_codes": {
+      "1": "Jumper in service connector - not faulty control unit (ECM)",
+      "2": "ECM power failure, tilt sensor defective, open in tilt sensor circuit",
+      "7": "MAP sensor contact off/not working, open/short in MAP sensor circuit, malfunctioning MAP sensor",
+      "8": "TP sensor contact moves away/not working, open/short in TP sensor circuit, faulty TP sensor",
+      "9": "IAT sensor contact away/not working, open/short in IAT sensor circuit",
+      "11": "Speedometer sensor contact away/not working, open/short in speedometer sensor circuit",
+      "12": "Injector No.1 connector contact removed/not working, Injector No.1 defective",
+      "13": "Injector No.2 connector contact removed/not working, Injector No.2 not working",
+      "18": "Pulse generator sensor contact not working, open/short in pulse generator sensor connector, defective",
+      "19": "Pulse ignition sensor contact depressed, open/short in ignition sensor circuit, defective",
+      "21": "O2 sensor defective (California only)",
+      "23": "O2 heating sensor faulty (California only)",
+      "33": "Damaged E2-PROM in ECM",
+      "10": "Battery, starter, or charging system malfunction",
+      "14": "Engine breaker not working properly, open in engine stop relay circuit, ignition switch not working"
+    },
+    "kline_commands": {
+      "01": "START",
+      "02": "WAKEUP",
+      "03": "VIN",
+      "04": "LIVE DATA",
+      "08": "READ DTC",
+      "09": "CLEAR DTC",
+      "10": "unknown",
+      "11": "unknown",
+      "12": "unknown",
+      "13": "unknown"
+    }
+  },
+  "suzuki": {
+    "ecu_models": [
+      {
+        "model": "ADV 160 KOWL-NB1",
+        "pn": "2015-2019"
+      },
+      {
+        "model": "ADV-150 KOWA-N01",
+        "pn": "INDONESIA"
+      },
+      {
+        "model": "ADV-150 KOWF-T01",
+        "pn": "THAILAND"
+      },
+      {
+        "model": "ADV-150 KOWH-M11",
+        "pn": "MALAYSIA"
+      },
+      {
+        "model": "BEAT 110 ESP",
+        "size": "64kb",
+        "pn": "K1AA-M02"
+      },
+      {
+        "model": "BEAT 110 ESP",
+        "size": "64kb",
+        "pn": "K1AA-N02"
+      },
+      {
+        "model": "BEAT 110 ESP",
+        "size": "64kb",
+        "pn": "K1AA-N03"
+      },
+      {
+        "model": "BEAT 110 ESP",
+        "size": "64kb",
+        "pn": "K1AA-N12"
+      },
+      {
+        "model": "BEAT 110 ESP",
+        "size": "64kb",
+        "pn": "K1AA-N13"
+      },
+      {
+        "model": "BEAT K25-901",
+        "size": "48kb"
+      },
+      {
+        "model": "BEAT K46-N01",
+        "size": "64kb"
+      },
+      {
+        "model": "PCX 160",
+        "pn": "K1ZF-T01"
+      },
+      {
+        "model": "PCX 160",
+        "pn": "K1ZF-T11"
+      },
+      {
+        "model": "PCX 160",
+        "pn": "K1ZG-N21"
+      },
+      {
+        "model": "PCX 160",
+        "pn": "K1ZG-N31"
+      },
+      {
+        "model": "PCX 160",
+        "pn": "K1ZN-N41"
+      },
+      {
+        "model": "GENIO K0J-N01"
+      },
+      {
+        "model": "GENIO K0J-N71",
+        "year": "2022"
+      },
+      {
+        "model": "GENIO K0J-N61",
+        "year": "2022"
+      },
+      {
+        "model": "VARIO 110 ACG",
+        "size": "256kb",
+        "pn": "K46-N01"
+      },
+      {
+        "model": "VARIO 125 K2VJ-H31"
+      },
+      {
+        "model": "VARIO 125",
+        "pn": "K60A-B11"
+      },
+      {
+        "model": "VARIO 150",
+        "pn": "K59A-A11"
+      },
+      {
+        "model": "VARIO 150",
+        "pn": "K59F-A01"
+      },
+      {
+        "model": "VARIO 150",
+        "pn": "K59J-A71"
+      },
+      {
+        "model": "ZOMER X",
+        "pn": "K20J-T21"
+      }
+    ]
+  },
+  "ktm": {
+    "dtc_codes": [
+      {
+        "code": "P0201",
+        "description": "Injection valve, rear cylinder malfunction",
+        "symptom": "Stalls"
+      },
+      {
+        "code": "P0202",
+        "description": "Injection valve, front cylinder malfunction",
+        "symptom": "Stalls"
+      },
+      {
+        "code": "P0351",
+        "description": "Ignition coil, rear cylinder malfunction",
+        "symptom": "Stalls"
+      },
+      {
+        "code": "P0352",
+        "description": "Ignition coil, front cylinder malfunction",
+        "symptom": "Stalls"
+      },
+      {
+        "code": "P0335",
+        "description": "Pick up malfunction",
+        "symptom": "Stalls"
+      },
+      {
+        "code": "P0130",
+        "description": "Lambda probe, rear cylinder malfunction"
+      },
+      {
+        "code": "P0032",
+        "description": "Lambda probe heater short circuit to positive"
+      },
+      {
+        "code": "P0031",
+        "description": "Lambda probe heater short circuit to ground"
+      },
+      {
+        "code": "P0150",
+        "description": "Lambda probe heater, front cylinder malfunction"
+      },
+      {
+        "code": "P0122",
+        "description": "Throttle position sensor output signal too low",
+        "symptom": "interruption"
+      },
+      {
+        "code": "P0123",
+        "description": "Throttle position sensor output signal too high",
+        "symptom": "short circuit"
+      },
+      {
+        "code": "P0107",
+        "description": "MAP sensor, rear cylinder output signal too low"
+      },
+      {
+        "code": "P0108",
+        "description": "MAP sensor, rear cylinder output signal too high"
+      },
+      {
+        "code": "P1106",
+        "description": "MAP sensor, rear cylinder hose pulled off/defective"
+      },
+      {
+        "code": "P1687",
+        "description": "MAP sensor, front cylinder output signal too low"
+      },
+      {
+        "code": "P1105",
+        "description": "MAP sensor, front cylinder hose pulled off/defective"
+      },
+      {
+        "code": "P0560",
+        "description": "Control unit voltage supply malfunction"
+      },
+      {
+        "code": "P1590",
+        "description": "Side stand switch output signal too low"
+      },
+      {
+        "code": "P0603",
+        "description": "EEPROM error malfunction"
+      }
+    ]
+  }
+}

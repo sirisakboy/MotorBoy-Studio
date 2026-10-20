@@ -1,0 +1,18 @@
+{
+    "honda_dlc_codes": {
+        "1": "MAP Sensor Error",
+        "2": "Ignition Pulse Circuit Error",
+        "3": "TP Sensor Error",
+        "4": "ECT Sensor Error",
+        "5": "IAT Sensor Error",
+        "6": "Oxygen Sensor Error",
+        "7": "Fuel Pump Circuit Error",
+        "8": "Idle Control Valve Error",
+        "9": "Ignition Coil Error",
+        "10": "Fuel Injector Error",
+        "11": "EVAP System Error",
+        "12": "Crank Position Sensor Error",
+        "21": "TP Sensor Range/Performance",
+        "33": "Ignition Timing Error"
+    }
+}
