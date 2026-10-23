@@ -108,9 +108,11 @@ def _parse_axis(el, d: Defaults):
         a.cols = _i(emb.get("mmedcolcount"), 1)
         a.major = _i(emb.get("mmedmajorstridebits"), 0)
         a.minor = _i(emb.get("mmedminorstridebits"), 0)
-        tf = _i(emb.get("mmedtypeflags"))
-        if tf is not None:  # 0x01 signed, 0x02 LSB first, 0x04 float
-            a.signed, a.lsb, a.is_float = bool(tf & 1), bool(tf & 2), bool(tf & 4)
+        # mmedtypeflags: 0x01 signed, 0x02 LSB first, 0x04 float. When absent the
+        # element is unsigned big-endian: header <DEFAULTS> only seeds new items
+        # in the editor (verified against real ROMs: MGZ vs MJW).
+        tf = _i(emb.get("mmedtypeflags"), 0)
+        a.signed, a.lsb, a.is_float = bool(tf & 1), bool(tf & 2), bool(tf & 4)
     a.count = _i(el.findtext("indexcount"), 0) or 0
     a.decimals = _i(el.findtext("decimalpl"), 2)
     m = el.find("MATH")
@@ -126,8 +128,24 @@ def _parse_axis(el, d: Defaults):
     return a
 
 
+class XdfFormatError(ValueError):
+    """Unsupported/invalid XDF (e.g. legacy binary V4)."""
+
+
 def parse_xdf(path) -> Xdf:
-    root = ET.parse(path).getroot()
+    """`path` may be a filename or a binary file-like object."""
+    if hasattr(path, "read"):
+        raw = path.read()
+    else:
+        with open(path, "rb") as f:
+            raw = f.read()
+    if raw[:3] == b"\x05\x22\x97":
+        raise XdfFormatError("legacy binary XDF (TunerPro V4) is not supported; "
+                             "open it in TunerPro and Save As to V5 XML")
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError as e:
+        raise XdfFormatError(f"not a valid XML XDF: {e}") from e
     if root.tag != "XDFFORMAT":
         raise ValueError("not an XDF file")
     h = root.find("XDFHEADER")

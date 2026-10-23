@@ -150,3 +150,10 @@ See LICENSE file for details.
 - CLI: `python -m xdfengine list|validate|dump|set|checksum|diff`; tables selectable by uniqueid (titles can repeat)
 - Verified: both bundled XDFs parse and decode inside bounds; 18 tests
 - Not verified: real stock ROMs, checksum plugin parity (`calculationmethod 0` assumed Honda 8-bit), stride semantics for exotic layouts
+
+## Offline web bridge (2026-10-21)
+- `server/ecu_backend.py`: WebSocket backend (127.0.0.1 only, Origin check, hardware actions refused, atomic multi-cell writes, export with optional checksum fix)
+- `web/ecu_real.html`: Remap page loads real XDF+BIN, variable-size tables, scaled-value editing, 3D rebuild, export/undo/diff/checksum
+- xdfengine fixes found on real ROMs: per-axis `mmedtypeflags` (header `<DEFAULTS>` must NOT set endianness — MGZ decoded byte-swapped before), `Rom.put` range check (was OverflowError)
+- Verified on repo data: Honda 8-bit checksum matches at end-of-ROM on 80/85 stock bins; MGZ/MJW/MEL/K26 tables decode smoother than a 1-byte-misaligned control
+- Known: 13 files in `xdfs/` are legacy V4 binary (unsupported); 5 bins don't match the Honda 8-bit checksum at size-8 (NL3-750, KYJ-971, EKCJ-J000, MFL-631, K64-R02)

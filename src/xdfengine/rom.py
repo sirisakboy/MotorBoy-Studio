@@ -50,7 +50,11 @@ class Rom:
         if is_float:
             b = struct.pack(("<" if lsb else ">") + {4: "f", 8: "d"}[n], raw)
         else:
-            b = int(raw).to_bytes(n, "little" if lsb else "big", signed=signed)
+            raw = int(raw)
+            lo, hi = (-(1 << (bits - 1)), (1 << (bits - 1)) - 1) if signed else (0, (1 << bits) - 1)
+            if not lo <= raw <= hi:
+                raise ValueError(f"raw {raw} outside {bits}-bit {'signed' if signed else 'unsigned'} range [{lo}, {hi}]")
+            b = raw.to_bytes(n, "little" if lsb else "big", signed=signed)
         self.data[addr:addr + n] = b
 
 

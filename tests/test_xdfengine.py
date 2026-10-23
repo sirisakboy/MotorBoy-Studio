@@ -2,7 +2,7 @@ import os, sys, random
 import pytest
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, os.path.join(ROOT, "src"))
-from xdfengine import (Equation, EquationError, Rom, parse_xdf, read_table, write_cell,
+from xdfengine import (Equation, EquationError, Rom, parse_xdf, read_table, write_cell, honda8,
                        validate, checksum_status, fix_checksum, diff_roms)
 
 PROF = os.path.join(ROOT, "Hart-ECU", "vehicle_profiles", "engine", "honda")
@@ -99,3 +99,63 @@ def test_get_by_uid_and_duplicate_titles(xdf):
     assert xdf.get("0x3A51").title == "Cyl1"
     with pytest.raises(KeyError):
         xdf.get("Cyl1")  # four tables share this title
+
+
+# ---- real-data regression (repo ships stock ROMs; skipped if absent) ---------
+import glob, statistics, copy
+
+BINS = os.path.join(ROOT, "bins")
+
+
+def _rough(v):
+    f = [x for r in v for x in r]
+    rg = (max(f) - min(f)) or 1
+    return statistics.mean(abs(r[i + 1] - r[i]) for r in v for i in range(len(r) - 1)) / rg
+
+
+@pytest.mark.skipif(not os.path.isdir(BINS), reason="no bins/")
+def test_real_roms_honda_checksum_at_end():
+    files = glob.glob(os.path.join(BINS, "**", "*.bin"), recursive=True)
+    assert files
+    ok = sum(1 for p in files
+             for d in [open(p, "rb").read()]
+             if honda8(d[:len(d) - 8] + d[len(d) - 7:]) == d[len(d) - 8])
+    assert ok / len(files) > 0.9  # 80/85 at time of writing
+
+
+@pytest.mark.skipif(not os.path.isdir(BINS), reason="no bins/")
+@pytest.mark.parametrize("xdf_rel,bin_rel", [
+    ("xdfs/CBR500R_MGZ_2013-2016/38770-MGZ.xdf", "bins/CBR500R_MGZ_2013-2016/38770-MGZ-A03.bin"),   # lsb flags per axis
+    ("xdfs/CBR500R_MJW_2017-2018/38770-MJW.xdf", "bins/CBR500R_MJW_2017-2018/38770-MJW-AQ1.bin"),
+])
+def test_real_tables_decode_smooth(xdf_rel, bin_rel):
+    from xdfengine import honda8  # noqa
+    x, b = os.path.join(ROOT, xdf_rel), os.path.join(ROOT, bin_rel)
+    if not (os.path.exists(x) and os.path.exists(b)):
+        pytest.skip("sample missing")
+    xdf, rom = parse_xdf(x), Rom.load(b)
+    n = good = 0
+    for t in xdf.tables:
+        z = t.z
+        if z.static or z.rows < 4 or z.cols < 4:
+            continue
+        shifted = copy.copy(t); z2 = copy.copy(z); z2.address = z.address + 1; shifted.z = z2
+        n += 1
+        good += _rough(read_table(xdf, rom, t).values) < _rough(read_table(xdf, rom, shifted).values)
+    assert n >= 8 and good == n  # a correct layout is smoother than a 1-byte-misaligned read
+
+
+def test_v4_binary_xdf_is_rejected_clearly(tmp_path):
+    from xdfengine import XdfFormatError
+    p = tmp_path / "v4.xdf"; p.write_bytes(b"\x05\x22\x97" + bytes(64))
+    with pytest.raises(XdfFormatError, match="V4"):
+        parse_xdf(str(p))
+
+
+def test_raw_out_of_range_is_valueerror_and_leaves_rom_intact(xdf):
+    rom, t = _rom(), xdf.find("Cyl1")[0]
+    before = bytes(rom.data)
+    for bad in (-1, 65536):
+        with pytest.raises(ValueError):
+            write_cell(xdf, rom, t, 0, 0, raw=bad)
+    assert bytes(rom.data) == before
